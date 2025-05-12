@@ -149,6 +149,8 @@
     <ClInclude Include="script\core\type\basic\int\unsigned\u32.h" />
     <ClInclude Include="script\core\type\basic\int\unsigned\u64.h" />
     <ClInclude Include="script\core\type\basic\int\unsigned\u8.h" />
+    <ClInclude Include="script\core\type\list\.h" />
+    <ClInclude Include="script\core\type\list\array.h" />
     <ClInclude Include="script\math\.h" />
     <ClInclude Include="script\math\math.h" />
   </ItemGroup>
