@@ -87,10 +87,19 @@
     <ClInclude Include="script\math\math.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\list\.h">
+    <ClInclude Include="script\core\type\array\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\list\array.h">
+    <ClInclude Include="script\core\type\array\array.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\core\type\array\list\list.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\core\type\array\list\.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\core\type\array\string\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

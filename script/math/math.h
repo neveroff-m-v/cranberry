@@ -17,12 +17,12 @@ public:
 	static f64 pi;
 
 	/// <summary>
-	/// constant π
+	/// infinity ∞
 	/// </summary>
 	static f64 inf;
 
 	/// <summary>
-	/// constant π
+	/// not a number
 	/// </summary>
 	static f64 nan;
 
@@ -55,6 +55,20 @@ public:
 	static f64 sqrt(f64 x);
 
 	/// <summary>
+	/// returns the cube value
+	/// </summary>
+	/// <param name="x"></param>
+	/// <returns></returns>
+	static f64 cb(f64 x);
+
+	/// <summary>
+	/// returns the cube root value
+	/// </summary>
+	/// <param name="x"></param>
+	/// <returns></returns>
+	static f64 cbrt(f64 x);
+
+	/// <summary>
 	/// returns the exponent value
 	/// </summary>
 	/// <param name="x"></param>
@@ -74,6 +88,20 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 lg(f64 x);
+
+	/// <summary>
+	/// returns the power value
+	/// </summary>
+	/// <param name="x"></param>
+	/// <returns></returns>
+	static f64 pw(f64 x, f64 n);
+
+	/// <summary>
+	/// returns the root value
+	/// </summary>
+	/// <param name="x"></param>
+	/// <returns></returns>
+	static f64 rt(f64 x, f64 n);
 
 	/// <summary>
 	/// returns the logarithm value
@@ -245,6 +273,16 @@ f64 math::sqrt(f64 x)
 	return std::sqrt(x);
 }
 
+f64 math::cb(f64 x)
+{
+	return x * x * x;
+}
+
+f64 math::cbrt(f64 x)
+{
+	return std::cbrt(x);
+}
+
 f64 math::exp(f64 x)
 {
 	return std::exp(x);
@@ -258,6 +296,16 @@ f64 math::ln(f64 x)
 f64 math::lg(f64 x)
 {
 	return std::log10(x);
+}
+
+f64 math::pw(f64 x, f64 n)
+{
+	return std::pow(x, n);
+}
+
+f64 math::rt(f64 x, f64 n)
+{
+	return std::pow(x, 1. / n);
 }
 
 f64 math::log(f64 x, f64 n)

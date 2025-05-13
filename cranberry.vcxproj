@@ -129,7 +129,10 @@
   <ItemGroup>
     <ClInclude Include="script\.h" />
     <ClInclude Include="script\core\.h" />
+    <ClInclude Include="script\core\macros\.h" />
+    <ClInclude Include="script\core\macros\foreach.h" />
     <ClInclude Include="script\core\type\.h" />
+    <ClInclude Include="script\core\type\array\string\.h" />
     <ClInclude Include="script\core\type\basic\.h" />
     <ClInclude Include="script\core\type\basic\char\.h" />
     <ClInclude Include="script\core\type\basic\char\c16.h" />
@@ -149,13 +152,15 @@
     <ClInclude Include="script\core\type\basic\int\unsigned\u32.h" />
     <ClInclude Include="script\core\type\basic\int\unsigned\u64.h" />
     <ClInclude Include="script\core\type\basic\int\unsigned\u8.h" />
-    <ClInclude Include="script\core\type\list\.h" />
-    <ClInclude Include="script\core\type\list\array.h" />
+    <ClInclude Include="script\core\type\array\.h" />
+    <ClInclude Include="script\core\type\array\array.h" />
+    <ClInclude Include="script\core\type\array\list\.h" />
+    <ClInclude Include="script\core\type\array\list\list.h" />
     <ClInclude Include="script\math\.h" />
     <ClInclude Include="script\math\math.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="example\debug\debug.cpp" />
+    <ClCompile Include="example\debug\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
