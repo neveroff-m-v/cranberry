@@ -134,6 +134,8 @@
     <ClInclude Include="script\core\type\.h" />
     <ClInclude Include="script\core\type\array\string\.h" />
     <ClInclude Include="script\core\type\basic\.h" />
+    <ClInclude Include="script\core\type\basic\logic\.h" />
+    <ClInclude Include="script\core\type\basic\logic\logic.h" />
     <ClInclude Include="script\core\type\basic\char\.h" />
     <ClInclude Include="script\core\type\basic\char\c16.h" />
     <ClInclude Include="script\core\type\basic\char\c32.h" />

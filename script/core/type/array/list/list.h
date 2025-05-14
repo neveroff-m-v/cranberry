@@ -5,32 +5,83 @@ class list
 {
 public:
 	list();
-	list(u32 size);
+	list(u32 count);
 
 	type& operator[](u32 index);
 
-	u8 empty();
+	logic is_empty();
 
-	type* element;
-	u32 size;
+	void add(type element);
+	void add(type* elements, u32 count);
+	void add(list<type> list);
+
+	type action_all(type(*function)(type*, u32));
+
+	type* elements;
+	u32 count;
 };
 
 template <typename type>
 list<type>::list()
 {
-	this->element = nullptr;
-	this->size = 0;
+	this->elements = nullptr;
+	this->count = 0;
 }
 
 template <typename type>
-list<type>::list(u32 size)
+list<type>::list(u32 count)
 {
-	this->element = new type[size]{};
-	this->size = size;
+	this->elements = new type[count]{};
+	this->count = count;
 }
 
 template <typename type>
 type& list<type>::operator[](u32 index)
 {
-	return element[index];
+	return elements[index];
+}
+
+template <typename type>
+logic list<type>::is_empty()
+{
+	return count == 0;
+}
+
+template <typename type>
+void list<type>::add(type element)
+{
+	type* buffer = new type[this->count + 1];
+	array::concat(buffer, this->elements, this->count, &element, 1);
+	delete[] this->elements;
+
+	this->elements = buffer;
+	this->count++;
+}
+
+template <typename type>
+void list<type>::add(type* elements, u32 count)
+{
+	type* buffer = new type[this->count + count];
+	array::concat(buffer, this->elements, this->count, elements, count);
+	delete[] this->elements;
+
+	this->elements = buffer;
+	this->count += count;
+}
+
+template <typename type>
+void list<type>::add(list<type> list)
+{
+	type* buffer = new type[this->count + list.count];
+	array::concat(buffer, this->elements, this->count, list.elements, list.count);
+	delete[] this->elements;
+
+	this->elements = buffer;
+	this->count += list.count;
+}
+
+template<typename type>
+type list<type>::action_all(type(*function)(type*, u32))
+{
+	return function(elements, count);
 }
