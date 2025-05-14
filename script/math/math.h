@@ -41,6 +41,46 @@ public:
 	static f64 sign(f64 x);
 
 	/// <summary>
+	/// returns maximum value
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="count"></param>
+	/// <returns></returns>
+	static f64 max(f64* x, u32 count);
+
+	/// <summary>
+	/// returns minimum value
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="count"></param>
+	/// <returns></returns>
+	static f64 min(f64* x, u32 count);
+
+	/// <summary>
+	/// returns summ value
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="count"></param>
+	/// <returns></returns>
+	static f64 summ(f64* x, u32 count);
+
+	/// <summary>
+	/// returns multiplication value
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="count"></param>
+	/// <returns></returns>
+	static f64 mult(f64* x, u32 count);
+
+	/// <summary>
+	/// returns mean value
+	/// </summary>
+	/// <param name="x"></param>
+	/// <param name="count"></param>
+	/// <returns></returns>
+	static f64 mean(f64* x, u32 count);
+
+	/// <summary>
 	/// returns the square value
 	/// </summary>
 	/// <param name="x"></param>
@@ -110,6 +150,8 @@ public:
 	/// <param name="n"></param>
 	/// <returns></returns>
 	static f64 log(f64 x, f64 n);
+
+	static f64 sigmoid(f64 x);
 
 	/// <summary>
 	/// returns the decibel value
@@ -250,160 +292,224 @@ f64 math::pi = 3.14159265358979323846;
 f64 math::nan = NAN;
 f64 math::inf = INFINITY;
 
-f64 math::abs(f64 x)
+inline f64 math::abs(f64 x)
 {
 	if (x > 0.) return x;
 				return -x;
 }
 
-f64 math::sign(f64 x)
+inline f64 math::sign(f64 x)
 {
 	if (x > 0.) return 1.;
 	if (x < 0.) return -1.;
 				return 0.;
 }
 
-f64 math::sq(f64 x)
+inline f64 math::max(f64* x, u32 count)
+{
+	f64 result = x[0];
+
+	for (u32 i = 1; i < count; i++)
+	{
+		if (x[i] > result)
+		{
+			result = x[i];
+		}
+	}
+
+	return result;
+}
+
+inline f64 math::min(f64* x, u32 count)
+{
+	f64 result = x[0];
+
+	for (u32 i = 1; i < count; i++)
+	{
+		if (x[i] < result)
+		{
+			result = x[i];
+		}
+	}
+
+	return result;
+}
+
+inline f64 math::summ(f64* x, u32 count)
+{
+	f64 result = 0.;
+
+	for (u32 i = 0; i < count; i++)
+	{
+		result += x[i];
+	}
+
+	return result;
+}
+
+inline f64 math::mult(f64* x, u32 count)
+{
+	f64 result = 1.;
+
+	for (u32 i = 0; i < count; i++)
+	{
+		result *= x[i];
+	}
+
+	return result;
+}
+
+inline f64 math::mean(f64* x, u32 count)
+{
+	return summ(x, count) / (f64) count;
+}
+
+inline f64 math::sq(f64 x)
 {
 	return x * x;
 }
 
-f64 math::sqrt(f64 x)
+inline f64 math::sqrt(f64 x)
 {
 	return std::sqrt(x);
 }
 
-f64 math::cb(f64 x)
+inline f64 math::cb(f64 x)
 {
 	return x * x * x;
 }
 
-f64 math::cbrt(f64 x)
+inline f64 math::cbrt(f64 x)
 {
 	return std::cbrt(x);
 }
 
-f64 math::exp(f64 x)
+inline f64 math::exp(f64 x)
 {
 	return std::exp(x);
 }
 
-f64 math::ln(f64 x)
+inline f64 math::ln(f64 x)
 {
 	return std::log(x);
 }
 
-f64 math::lg(f64 x)
+inline f64 math::lg(f64 x)
 {
 	return std::log10(x);
 }
 
-f64 math::pw(f64 x, f64 n)
+inline f64 math::pw(f64 x, f64 n)
 {
 	return std::pow(x, n);
 }
 
-f64 math::rt(f64 x, f64 n)
+inline f64 math::rt(f64 x, f64 n)
 {
 	return std::pow(x, 1. / n);
 }
 
-f64 math::log(f64 x, f64 n)
+inline f64 math::log(f64 x, f64 n)
 {
 	return ln(x) / ln(n);
 }
 
-f64 math::db(f64 x)
+inline f64 math::sigmoid(f64 x)
+{
+	return 1. / (1 + exp(-x));
+}
+
+inline f64 math::db(f64 x)
 {
 	return 20. * std::log10(x);
 }
 
-f64 math::rad(f64 x)
+inline f64 math::rad(f64 x)
 {
 	return x * math::pi / 180.;
 }
 
-f64 math::deg(f64 x)
+inline f64 math::deg(f64 x)
 {
 	return x / math::pi * 180.;
 }
 
-f64 math::sin(f64 x)
+inline f64 math::sin(f64 x)
 {
 	return std::sin(x);
 }
 
-f64 math::asin(f64 x)
+inline f64 math::asin(f64 x)
 {
 	return std::asin(x);
 }
 
-f64 math::cos(f64 x)
+inline f64 math::cos(f64 x)
 {
 	return std::cos(x);
 }
 
-f64 math::acos(f64 x)
+inline f64 math::acos(f64 x)
 {
 	return std::acos(x);
 }
 
-f64 math::tg(f64 x)
+inline f64 math::tg(f64 x)
 {
 	return std::tan(x);
 }
 
-f64 math::atg(f64 x)
+inline f64 math::atg(f64 x)
 {
 	return std::atan(x);
 }
 
-f64 math::ctg(f64 x)
+inline f64 math::ctg(f64 x)
 {
 	return 1 / tg(x);
 }
 
-f64 math::actg(f64 x)
+inline f64 math::actg(f64 x)
 {
 	return 0.;
 }
 
-f64 math::sh(f64 x)
+inline f64 math::sh(f64 x)
 {
 	return std::sinh(x);
 }
 
-f64 math::ash(f64 x)
+inline f64 math::ash(f64 x)
 {
 	return std::asinh(x);
 }
 
-f64 math::ch(f64 x)
+inline f64 math::ch(f64 x)
 {
 	return std::cosh(x);
 }
 
-f64 math::ach(f64 x)
+inline f64 math::ach(f64 x)
 {
 	return std::acosh(x);
 }
 
-f64 math::tgh(f64 x)
+inline f64 math::tgh(f64 x)
 {
 	return std::tanh(x);
 }
 
-f64 math::atgh(f64 x)
+inline f64 math::atgh(f64 x)
 {
 	return std::atanh(x);
 }
 
-f64 math::ctgh(f64 x)
+inline f64 math::ctgh(f64 x)
 {
 	return 0.;
 }
 
-f64 math::actgh(f64 x)
+inline f64 math::actgh(f64 x)
 {
 	return 0.;
 }

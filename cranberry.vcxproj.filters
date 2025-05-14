@@ -102,9 +102,18 @@
     <ClInclude Include="script\core\type\array\string\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="script\core\macros\.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\core\macros\foreach.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\math\complex.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="example\debug\debug.cpp">
+    <ClCompile Include="example\debug\main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

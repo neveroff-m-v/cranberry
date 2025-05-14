@@ -157,6 +157,7 @@
     <ClInclude Include="script\core\type\array\list\.h" />
     <ClInclude Include="script\core\type\array\list\list.h" />
     <ClInclude Include="script\math\.h" />
+    <ClInclude Include="script\math\complex.h" />
     <ClInclude Include="script\math\math.h" />
   </ItemGroup>
   <ItemGroup>
