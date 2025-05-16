@@ -15,7 +15,9 @@ public:
 	void add(type* elements, u32 count);
 	void add(list<type> list);
 
-	type action_all(type(*function)(type*, u32));
+	list<type> action(type(*function)(type));
+	list<type> action(type(*function)(type*, u32), u32 width);
+	type action(type(*function)(type*, u32));
 
 	type* elements;
 	u32 count;
@@ -81,7 +83,33 @@ void list<type>::add(list<type> list)
 }
 
 template<typename type>
-type list<type>::action_all(type(*function)(type*, u32))
+inline list<type> list<type>::action(type(*function)(type))
+{
+	list<type> result = list<type>(count);
+
+	foreach(i, result)
+	{
+		result.elements[i] = function(elements[i]);
+	}
+
+	return result;
+}
+
+template<typename type>
+inline list<type> list<type>::action(type(*function)(type*, u32), u32 width)
+{
+	list<type> result = list<type>(count - (width - 1));
+
+	foreach(i, result)
+	{
+		result.elements[i] = function(elements + i, width);
+	}
+
+	return result;
+}
+
+template<typename type>
+type list<type>::action(type(*function)(type*, u32))
 {
 	return function(elements, count);
 }

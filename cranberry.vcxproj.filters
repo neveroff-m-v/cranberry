@@ -24,61 +24,61 @@
     <ClInclude Include="script\core\type\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\.h">
+    <ClInclude Include="script\core\type\static\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\int\.h">
+    <ClInclude Include="script\core\type\static\int\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\int\signed\i64.h">
+    <ClInclude Include="script\core\type\static\int\signed\i64.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\int\signed\i32.h">
+    <ClInclude Include="script\core\type\static\int\signed\i32.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\int\signed\i16.h">
+    <ClInclude Include="script\core\type\static\int\signed\i16.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\int\signed\i8.h">
+    <ClInclude Include="script\core\type\static\int\signed\i8.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\int\unsigned\u64.h">
+    <ClInclude Include="script\core\type\static\int\unsigned\u64.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\int\unsigned\u32.h">
+    <ClInclude Include="script\core\type\static\int\unsigned\u32.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\int\unsigned\u16.h">
+    <ClInclude Include="script\core\type\static\int\unsigned\u16.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\int\unsigned\u8.h">
+    <ClInclude Include="script\core\type\static\int\unsigned\u8.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\int\signed\.h">
+    <ClInclude Include="script\core\type\static\int\signed\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\int\unsigned\.h">
+    <ClInclude Include="script\core\type\static\int\unsigned\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\float\.h">
+    <ClInclude Include="script\core\type\static\float\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\float\f64.h">
+    <ClInclude Include="script\core\type\static\float\f64.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\float\f32.h">
+    <ClInclude Include="script\core\type\static\float\f32.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\char\.h">
+    <ClInclude Include="script\core\type\static\char\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\char\c8.h">
+    <ClInclude Include="script\core\type\static\char\c8.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\char\c16.h">
+    <ClInclude Include="script\core\type\static\char\c16.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\char\c32.h">
+    <ClInclude Include="script\core\type\static\char\c32.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="script\math\.h">
@@ -87,19 +87,19 @@
     <ClInclude Include="script\math\math.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\array\.h">
+    <ClInclude Include="script\core\type\dynamic\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\array\array.h">
+    <ClInclude Include="script\core\type\dynamic\array.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\array\list\list.h">
+    <ClInclude Include="script\core\type\dynamic\list\list.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\array\list\.h">
+    <ClInclude Include="script\core\type\dynamic\list\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\array\string\.h">
+    <ClInclude Include="script\core\type\dynamic\string\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="script\core\macros\.h">
@@ -111,10 +111,34 @@
     <ClInclude Include="script\math\complex.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\logic\.h">
+    <ClInclude Include="script\core\type\static\logic\.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="script\core\type\basic\logic\logic.h">
+    <ClInclude Include="script\core\type\static\logic\logic.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\core\type\dynamic\string\string.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\math\range.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\io\.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\io\console\.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\io\console\console.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\math\graph\.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\math\graph\polar\.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\math\graph\polar\graph_polar.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

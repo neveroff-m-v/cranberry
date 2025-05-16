@@ -40,6 +40,10 @@ public:
 	/// <returns></returns>
 	static f64 sign(f64 x);
 
+	static f64 round(f64 x, u32 n = 0);
+	static f64 round_up(f64 x, u32 n = 0);
+	static f64 round_down(f64 x, u32 n = 0);
+
 	/// <summary>
 	/// returns maximum value
 	/// </summary>
@@ -151,6 +155,11 @@ public:
 	/// <returns></returns>
 	static f64 log(f64 x, f64 n);
 
+	/// <summary>
+	/// returns sigmoid value
+	/// </summary>
+	/// <param name="x"></param>
+	/// <returns></returns>
 	static f64 sigmoid(f64 x);
 
 	/// <summary>
@@ -285,6 +294,12 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 actgh(f64 x);
+
+	static f64 re(complex z);
+	static f64 im(complex z);
+	static f64 abs(complex z);
+	static f64 arg(complex z);
+	static complex exp(complex z);
 };
 
 f64 math::e = 2.7182818284590452354;
@@ -303,6 +318,24 @@ inline f64 math::sign(f64 x)
 	if (x > 0.) return 1.;
 	if (x < 0.) return -1.;
 				return 0.;
+}
+
+inline f64 math::round(f64 x, u32 n)
+{
+	f64 scale = pw(10., n);
+	return std::round(x * scale) / scale;
+}
+
+inline f64 math::round_up(f64 x, u32 n)
+{
+	f64 scale = pw(10., n);
+	return std::ceil(x * scale) / scale;
+}
+
+inline f64 math::round_down(f64 x, u32 n)
+{
+	f64 scale = pw(10., n);
+	return std::floor(x * scale) / scale;
 }
 
 inline f64 math::max(f64* x, u32 count)
@@ -512,4 +545,29 @@ inline f64 math::ctgh(f64 x)
 inline f64 math::actgh(f64 x)
 {
 	return 0.;
+}
+
+inline f64 math::re(complex z)
+{
+	return z.r * cos(z.phi);
+}
+
+inline f64 math::im(complex z)
+{
+	return z.r * sin(z.phi);
+}
+
+inline f64 math::abs(complex z)
+{
+	return z.r;
+}
+
+inline f64 math::arg(complex z)
+{
+	return z.phi;
+}
+
+inline complex math::exp(complex z)
+{
+	return complex();
 }
