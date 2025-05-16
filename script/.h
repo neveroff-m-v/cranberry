@@ -1,11 +1,16 @@
 #pragma once
 
-namespace std
+#define _CRT_SECURE_NO_WARNINGS
+
+namespace cpp_std
 {
 #include <math.h>
 #include <stdio.h>
 }
 
-#include "core/.h"
+#include "macros/.h"
+#include "type/.h"
 #include "math/.h"
 #include "io/.h"
+
+#include "svg/.h"

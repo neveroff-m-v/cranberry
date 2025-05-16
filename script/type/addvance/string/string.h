@@ -10,6 +10,10 @@ public:
 	string(u32 count);
 	string(const c8* symbols);
 
+	c8& operator[](u32 index);
+
+	void add(string string);
+
 	c8* symbols;
 	u32 count;
 };
@@ -35,4 +39,19 @@ string::string(const c8* symbols)
 	{
 		this->symbols[i] = symbols[i];
 	}
+}
+
+inline c8& string::operator[](u32 index)
+{
+	return symbols[index];
+}
+
+inline void string::add(string string)
+{
+	c8* buffer = new c8[this->count + string.count];
+	array::concat(buffer, this->symbols, this->count, string.symbols, string.count);
+	delete[] this->symbols;
+
+	this->symbols = buffer;
+	this->count += string.count;
 }

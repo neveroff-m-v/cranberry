@@ -44,17 +44,17 @@ inline complex complex::decart(f64 x, f64 y)
 {
 	complex result;
 
-	result.r = std::sqrt(x * x + y * y);
+	result.r = cpp_std::sqrt(x * x + y * y);
 
 	if (x > 0)
 	{
-		result.phi = std::atan(y / x);
+		result.phi = cpp_std::atan(y / x);
 		return result;
 	}
 
 	if (x < 0)
 	{
-		result.phi = std::atan(y / x) + 3.14159265358979323846;
+		result.phi = cpp_std::atan(y / x) + 3.14159265358979323846;
 		return result;
 	}
 

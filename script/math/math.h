@@ -323,19 +323,19 @@ inline f64 math::sign(f64 x)
 inline f64 math::round(f64 x, u32 n)
 {
 	f64 scale = pw(10., n);
-	return std::round(x * scale) / scale;
+	return cpp_std::round(x * scale) / scale;
 }
 
 inline f64 math::round_up(f64 x, u32 n)
 {
 	f64 scale = pw(10., n);
-	return std::ceil(x * scale) / scale;
+	return cpp_std::ceil(x * scale) / scale;
 }
 
 inline f64 math::round_down(f64 x, u32 n)
 {
 	f64 scale = pw(10., n);
-	return std::floor(x * scale) / scale;
+	return cpp_std::floor(x * scale) / scale;
 }
 
 inline f64 math::max(f64* x, u32 count)
@@ -404,7 +404,7 @@ inline f64 math::sq(f64 x)
 
 inline f64 math::sqrt(f64 x)
 {
-	return std::sqrt(x);
+	return cpp_std::sqrt(x);
 }
 
 inline f64 math::cb(f64 x)
@@ -414,32 +414,32 @@ inline f64 math::cb(f64 x)
 
 inline f64 math::cbrt(f64 x)
 {
-	return std::cbrt(x);
+	return cpp_std::cbrt(x);
 }
 
 inline f64 math::exp(f64 x)
 {
-	return std::exp(x);
+	return cpp_std::exp(x);
 }
 
 inline f64 math::ln(f64 x)
 {
-	return std::log(x);
+	return cpp_std::log(x);
 }
 
 inline f64 math::lg(f64 x)
 {
-	return std::log10(x);
+	return cpp_std::log10(x);
 }
 
 inline f64 math::pw(f64 x, f64 n)
 {
-	return std::pow(x, n);
+	return cpp_std::pow(x, n);
 }
 
 inline f64 math::rt(f64 x, f64 n)
 {
-	return std::pow(x, 1. / n);
+	return cpp_std::pow(x, 1. / n);
 }
 
 inline f64 math::log(f64 x, f64 n)
@@ -454,7 +454,7 @@ inline f64 math::sigmoid(f64 x)
 
 inline f64 math::db(f64 x)
 {
-	return 20. * std::log10(x);
+	return 20. * cpp_std::log10(x);
 }
 
 inline f64 math::rad(f64 x)
@@ -469,32 +469,32 @@ inline f64 math::deg(f64 x)
 
 inline f64 math::sin(f64 x)
 {
-	return std::sin(x);
+	return cpp_std::sin(x);
 }
 
 inline f64 math::asin(f64 x)
 {
-	return std::asin(x);
+	return cpp_std::asin(x);
 }
 
 inline f64 math::cos(f64 x)
 {
-	return std::cos(x);
+	return cpp_std::cos(x);
 }
 
 inline f64 math::acos(f64 x)
 {
-	return std::acos(x);
+	return cpp_std::acos(x);
 }
 
 inline f64 math::tg(f64 x)
 {
-	return std::tan(x);
+	return cpp_std::tan(x);
 }
 
 inline f64 math::atg(f64 x)
 {
-	return std::atan(x);
+	return cpp_std::atan(x);
 }
 
 inline f64 math::ctg(f64 x)
@@ -509,32 +509,32 @@ inline f64 math::actg(f64 x)
 
 inline f64 math::sh(f64 x)
 {
-	return std::sinh(x);
+	return cpp_std::sinh(x);
 }
 
 inline f64 math::ash(f64 x)
 {
-	return std::asinh(x);
+	return cpp_std::asinh(x);
 }
 
 inline f64 math::ch(f64 x)
 {
-	return std::cosh(x);
+	return cpp_std::cosh(x);
 }
 
 inline f64 math::ach(f64 x)
 {
-	return std::acosh(x);
+	return cpp_std::acosh(x);
 }
 
 inline f64 math::tgh(f64 x)
 {
-	return std::tanh(x);
+	return cpp_std::tanh(x);
 }
 
 inline f64 math::atgh(f64 x)
 {
-	return std::atanh(x);
+	return cpp_std::atanh(x);
 }
 
 inline f64 math::ctgh(f64 x)

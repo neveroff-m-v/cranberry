@@ -1,0 +1,40 @@
+#pragma once
+
+class convert
+{
+public:
+    static string to_string(u8 value);
+    static string to_string(f64 value);
+
+    template<typename type>
+    static string to_string(list<type> list);
+};
+
+inline string convert::to_string(u8 value)
+{
+    c8* buffer = new c8[4];
+    cpp_std::sprintf(buffer, "%i", value);
+    return string(buffer);
+}
+
+inline string convert::to_string(f64 value)
+{
+    c8* buffer = new c8[20];
+    cpp_std::sprintf(buffer, "%lf", value);
+    return string(buffer);
+}
+
+template<typename type>
+inline string convert::to_string(list<type> list)
+{
+    string result = "[";
+
+    foreach(i, list)
+    {
+        result.add(to_string(list[i]));
+        result.add(";");
+    }
+    result.add("]");
+
+    return result;
+}

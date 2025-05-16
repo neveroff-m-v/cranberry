@@ -162,6 +162,8 @@
     <ClInclude Include="script\io\.h" />
     <ClInclude Include="script\io\console\.h" />
     <ClInclude Include="script\io\console\console.h" />
+    <ClInclude Include="script\io\file\.h" />
+    <ClInclude Include="script\io\stream.h" />
     <ClInclude Include="script\math\.h" />
     <ClInclude Include="script\math\complex.h" />
     <ClInclude Include="script\math\graph\.h" />
@@ -169,6 +171,8 @@
     <ClInclude Include="script\math\graph\polar\graph_polar.h" />
     <ClInclude Include="script\math\math.h" />
     <ClInclude Include="script\math\range.h" />
+    <ClInclude Include="script\svg\.h" />
+    <ClInclude Include="script\svg\svg_element.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="example\debug\main.cpp" />
