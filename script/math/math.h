@@ -42,6 +42,9 @@ public:
 
 	static logic inside(f64 x, range range);
 
+	static logic rise(f64 a, f64 b);
+	static logic fall(f64 a, f64 b);
+
 	static f64 round(f64 x, u32 n = 0);
 	static f64 round_up(f64 x, u32 n = 0);
 	static f64 round_down(f64 x, u32 n = 0);
@@ -325,6 +328,16 @@ inline f64 math::sign(f64 x)
 inline logic math::inside(f64 x, range range)
 {
 	return (x >= range.min) && (x < range.max);
+}
+
+inline logic math::rise(f64 a, f64 b)
+{
+	return a > b;
+}
+
+inline logic math::fall(f64 a, f64 b)
+{
+	return a < b;
 }
 
 inline f64 math::round(f64 x, u32 n)

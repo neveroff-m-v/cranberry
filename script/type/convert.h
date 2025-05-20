@@ -4,7 +4,13 @@ class convert
 {
 public:
     static string to_string(u8 value);
+    static string to_string(u16 value);
+    static string to_string(u32 value);
+    static string to_string(u64 value);
+
     static string to_string(f64 value);
+
+    static string to_string(string value);
 
     template<typename type>
     static string to_string(list<type> list);
@@ -17,11 +23,27 @@ inline string convert::to_string(u8 value)
     return string(buffer);
 }
 
+inline string convert::to_string(u16 value)
+{
+    c8* buffer = new c8[8];
+    cpp_std::sprintf(buffer, "%i", value);
+    return string(buffer);
+}
+
 inline string convert::to_string(f64 value)
 {
     c8* buffer = new c8[20];
     cpp_std::sprintf(buffer, "%lf", value);
     return string(buffer);
+}
+
+inline string convert::to_string(string value)
+{
+    string result = "\"";
+    result.add(value);
+    result.add("\"");
+
+    return result;
 }
 
 template<typename type>
@@ -34,7 +56,7 @@ inline string convert::to_string(list<type> list)
         result.add(to_string(list[i]));
         result.add(";");
     }
-    result.add(to_string(list[list.count]));
+    result.add(to_string(list[list.count - 1]));
     result.add("]");
 
     return result;

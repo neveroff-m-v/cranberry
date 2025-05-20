@@ -1,5 +1,9 @@
 #pragma once
 
+/// <summary>
+/// strongly typed list of objects that can be accessed by index. provides methods to search, sort, and manipulate lists
+/// </summary>
+/// <typeparam name="type"></typeparam>
 template <typename type>
 class list
 {
@@ -24,9 +28,11 @@ public:
 	type action(type(*function)(type*, u32));
 
 	template <typename type_arg>
-	list<type> filter(logic(*function)(type, type_arg), type_arg args);
+	list<type> filter(logic(*function)(type, type_arg), type_arg arg);
 	list<type> filter(logic(*function)(type));
 	
+	template <typename type_arg>
+	void sort(logic(*function)(type, type, type_arg), type_arg arg);
 	void sort(logic(*function)(type, type));
 
 	type* elements;
@@ -158,6 +164,23 @@ type list<type>::action(type(*function)(type*, u32))
 }
 
 template<typename type>
+template<typename type_arg>
+inline list<type> list<type>::filter(logic(*function)(type, type_arg), type_arg arg)
+{
+	list<type> result = list<type>(0);
+
+	for (u32 i = 0; i < count; i++)
+	{
+		if (function(elements[i], arg))
+		{
+			result.add(elements[i]);
+		}
+	}
+
+	return result;
+}
+
+template<typename type>
 inline list<type> list<type>::filter(logic(*function)(type))
 {
 	list<type> result = list<type>(0);
@@ -175,33 +198,46 @@ inline list<type> list<type>::filter(logic(*function)(type))
 
 template<typename type>
 template<typename type_arg>
-inline list<type> list<type>::filter(logic(*function)(type, type_arg), type_arg args)
+inline void list<type>::sort(logic(*function)(type, type, type_arg), type_arg arg)
 {
-	list<type> result = list<type>(0);
+	logic ready = false;
+	type buffer;
 
-	for (u32 i = 0; i < count; i++)
+	while (!ready)
 	{
-		if (function(elements[i], args))
+		ready = true;
+		for (u32 i = 0; i < count - 1; i++)
 		{
-			result.add(elements[i]);
+			if (function(elements[i], elements[i + 1], arg))
+			{
+				buffer = elements[i];
+				elements[i] = elements[i + 1];
+				elements[i + 1] = buffer;
+
+				ready = false;
+			}
 		}
 	}
-
-	return result;
 }
 
 template<typename type>
 inline void list<type>::sort(logic(*function)(type, type))
 {
-	for (u32 i = 0; i < count; i++)
+	logic ready = false;
+	type buffer;
+
+	while(!ready)
 	{
-		for (u32 j = i; j < count; j++)
+		ready = true;
+		for (u32 i = 0; i < count - 1; i++)
 		{
-			if (function(elements[i], elements[j]))
+			if (function(elements[i], elements[i+1]))
 			{
-				type buffer = elements[i];
-				elements[i] = elements[j];
-				elements[j] = buffer;
+				buffer = elements[i];
+				elements[i] = elements[i+1];
+				elements[i+1] = buffer;
+
+				ready = false;
 			}
 		}
 	}
