@@ -8,6 +8,9 @@ public:
 
 	template<typename type>
 	static void concat(type* dst, type* src_a, u32 src_a_count, type* src_b, u32 src_b_count);
+
+	template<typename type>
+	static void include(type* dst, type* src_a, u32 src_a_count, type* src_b, u32 src_b_count, u32 index);
 };
 
 template<typename type>
@@ -26,4 +29,12 @@ void array::concat(type* dst, type* src_a, u32 src_a_count, type* src_b, u32 src
 {
 	copy(dst, 0, src_a, 0, src_a_count);
 	copy(dst, src_a_count, src_b, 0, src_b_count);
+}
+
+template<typename type>
+inline void array::include(type* dst, type* src_a, u32 src_a_count, type* src_b, u32 src_b_count, u32 index)
+{
+	copy(dst, 0, src_a, 0, index);
+	copy(dst, index, src_b, 0, src_b_count);
+	copy(dst, index + src_b_count, src_a, index, src_a_count - index);
 }

@@ -29,11 +29,12 @@ inline string convert::to_string(list<type> list)
 {
     string result = "[";
 
-    foreach(i, list)
+    for(u32 i = 0; i < list.count - 1; i++)
     {
         result.add(to_string(list[i]));
         result.add(";");
     }
+    result.add(to_string(list[list.count]));
     result.add("]");
 
     return result;

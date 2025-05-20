@@ -15,9 +15,19 @@ public:
 	void add(type* elements, u32 count);
 	void add(list<type> list);
 
+	void inc(type element, u32 index);
+	void inc(type* elements, u32 count, u32 index);
+	void inc(list<type> list, u32 index);
+
 	list<type> action(type(*function)(type));
 	list<type> action(type(*function)(type*, u32), u32 width);
 	type action(type(*function)(type*, u32));
+
+	template <typename type_arg>
+	list<type> filter(logic(*function)(type, type_arg), type_arg args);
+	list<type> filter(logic(*function)(type));
+	
+	void sort(logic(*function)(type, type));
 
 	type* elements;
 	u32 count;
@@ -83,6 +93,39 @@ void list<type>::add(list<type> list)
 }
 
 template<typename type>
+inline void list<type>::inc(type element, u32 index)
+{
+	type* buffer = new type[this->count + 1];
+	array::include(buffer, this->elements, this->count, &element, 1, index);
+	delete[] this->elements;
+
+	this->elements = buffer;
+	this->count++;
+}
+
+template<typename type>
+inline void list<type>::inc(type* elements, u32 count, u32 index)
+{
+	type* buffer = new type[this->count + count];
+	array::include(buffer, this->elements, this->count, elements, count, index);
+	delete[] this->elements;
+
+	this->elements = buffer;
+	this->count += count;
+}
+
+template<typename type>
+inline void list<type>::inc(list<type> list, u32 index)
+{
+	type* buffer = new type[this->count + list.count];
+	array::include(buffer, this->elements, this->count, list.elements, list.count, index);
+	delete[] this->elements;
+
+	this->elements = buffer;
+	this->count += list.count;
+}
+
+template<typename type>
 inline list<type> list<type>::action(type(*function)(type))
 {
 	list<type> result = list<type>(count);
@@ -112,4 +155,54 @@ template<typename type>
 type list<type>::action(type(*function)(type*, u32))
 {
 	return function(elements, count);
+}
+
+template<typename type>
+inline list<type> list<type>::filter(logic(*function)(type))
+{
+	list<type> result = list<type>(0);
+
+	for(u32 i = 0; i < count; i++)
+	{
+		if (function(elements[i]))
+		{
+			result.add(elements[i]);
+		}
+	}
+
+	return result;
+}
+
+template<typename type>
+template<typename type_arg>
+inline list<type> list<type>::filter(logic(*function)(type, type_arg), type_arg args)
+{
+	list<type> result = list<type>(0);
+
+	for (u32 i = 0; i < count; i++)
+	{
+		if (function(elements[i], args))
+		{
+			result.add(elements[i]);
+		}
+	}
+
+	return result;
+}
+
+template<typename type>
+inline void list<type>::sort(logic(*function)(type, type))
+{
+	for (u32 i = 0; i < count; i++)
+	{
+		for (u32 j = i; j < count; j++)
+		{
+			if (function(elements[i], elements[j]))
+			{
+				type buffer = elements[i];
+				elements[i] = elements[j];
+				elements[j] = buffer;
+			}
+		}
+	}
 }

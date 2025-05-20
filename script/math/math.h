@@ -40,6 +40,8 @@ public:
 	/// <returns></returns>
 	static f64 sign(f64 x);
 
+	static logic inside(f64 x, range range);
+
 	static f64 round(f64 x, u32 n = 0);
 	static f64 round_up(f64 x, u32 n = 0);
 	static f64 round_down(f64 x, u32 n = 0);
@@ -318,6 +320,11 @@ inline f64 math::sign(f64 x)
 	if (x > 0.) return 1.;
 	if (x < 0.) return -1.;
 				return 0.;
+}
+
+inline logic math::inside(f64 x, range range)
+{
+	return (x >= range.min) && (x < range.max);
 }
 
 inline f64 math::round(f64 x, u32 n)
