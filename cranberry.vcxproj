@@ -163,7 +163,8 @@
     <ClInclude Include="script\io\.h" />
     <ClInclude Include="script\io\console\.h" />
     <ClInclude Include="script\io\console\console.h" />
-    <ClInclude Include="script\io\file\.h" />
+    <ClInclude Include="script\io\document\.h" />
+    <ClInclude Include="script\io\document\document.h" />
     <ClInclude Include="script\io\stream.h" />
     <ClInclude Include="script\math\.h" />
     <ClInclude Include="script\math\complex.h" />

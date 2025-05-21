@@ -6,6 +6,9 @@ public:
 	template<typename type>
 	static void write(type value);
 
+	template<typename type>
+	static void write_line(type value);
+
 private:
 	static stream input;
 	static stream output;
@@ -18,4 +21,11 @@ template<typename type>
 void console::write(type value)
 {
 	output.write(value);
+}
+
+template<typename type>
+inline void console::write_line(type value)
+{
+	output.write(value);
+	output.write("\n");
 }

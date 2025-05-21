@@ -9,6 +9,8 @@ public:
 	complex();
 	complex(f64 r, f64 phi);
 
+	string to_string();
+
 	static complex decart(f64 x, f64 y);
 	static complex polar(f64 r, f64 phi);
 
@@ -38,6 +40,16 @@ inline complex::complex(f64 r, f64 phi)
 {
 	this->r = r;
 	this->phi = phi;
+}
+
+inline string complex::to_string()
+{
+	string result;
+	result.add(convert::to_string(r));
+	result.add(":");
+	result.add(convert::to_string(phi));
+
+	return result;
 }
 
 inline complex complex::decart(f64 x, f64 y)
