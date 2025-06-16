@@ -45,9 +45,14 @@ public:
 	static logic rise(f64 a, f64 b);
 	static logic fall(f64 a, f64 b);
 
-	static f64 round(f64 x, u32 n = 0);
-	static f64 round_up(f64 x, u32 n = 0);
-	static f64 round_down(f64 x, u32 n = 0);
+	static f64 round(f64 x);
+	static f64 round(f64 x, u32 n);
+
+	static f64 round_up(f64 x);
+	static f64 round_up(f64 x, u32 n);
+
+	static f64 round_down(f64 x);
+	static f64 round_down(f64 x, u32 n);
 
 	/// <summary>
 	/// returns maximum value
@@ -340,16 +345,31 @@ inline logic math::fall(f64 a, f64 b)
 	return a < b;
 }
 
+inline f64 math::round(f64 x)
+{
+	return cpp_std::round(x);
+}
+
 inline f64 math::round(f64 x, u32 n)
 {
 	f64 scale = pw(10., n);
 	return cpp_std::round(x * scale) / scale;
 }
 
+inline f64 math::round_up(f64 x)
+{
+	return cpp_std::ceil(x);
+}
+
 inline f64 math::round_up(f64 x, u32 n)
 {
 	f64 scale = pw(10., n);
 	return cpp_std::ceil(x * scale) / scale;
+}
+
+inline f64 math::round_down(f64 x)
+{
+	return cpp_std::floor(x);
 }
 
 inline f64 math::round_down(f64 x, u32 n)

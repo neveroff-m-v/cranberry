@@ -89,6 +89,10 @@ inline complex complex::decart(f64 x, f64 y)
 inline complex complex::polar(f64 r, f64 phi)
 {
 	complex z;
+
+	z.r = r;
+	z.phi = phi;
+
 	return z;
 }
 
@@ -106,8 +110,8 @@ complex complex::operator / (complex z)
 {
 	complex result;
 
-	result.r = this->r - z.r;
-	result.phi = this->phi / z.phi;
+	result.r = this->r / z.r;
+	result.phi = this->phi - z.phi;
 
 	return result;
 }

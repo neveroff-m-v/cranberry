@@ -168,6 +168,7 @@
     <ClInclude Include="script\io\stream.h" />
     <ClInclude Include="script\math\.h" />
     <ClInclude Include="script\math\complex.h" />
+    <ClInclude Include="script\math\fourier.h" />
     <ClInclude Include="script\math\graph\.h" />
     <ClInclude Include="script\math\graph\polar\.h" />
     <ClInclude Include="script\math\graph\polar\graph_polar.h" />
