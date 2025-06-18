@@ -37,4 +37,3 @@ inline range::range(f64 min, f64 max)
 inline range::range(f64 min, f64 max, f64 step)
 {
 }
-

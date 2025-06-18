@@ -26,6 +26,10 @@ public:
 	/// </summary>
 	static f64 nan;
 
+	static list<f64> range(f64 min, f64 max, f64 delta);
+
+	static f64* range(f64 min, f64 max, u32 count);
+
 	/// <summary>
 	/// returns the absolute value
 	/// </summary>
@@ -316,6 +320,12 @@ f64 math::e = 2.7182818284590452354;
 f64 math::pi = 3.14159265358979323846;
 f64 math::nan = NAN;
 f64 math::inf = INFINITY;
+
+inline list<f64> math::range(f64 min, f64 max, f64 delta)
+{
+	f64* result = new f64*
+	return nullptr;
+}
 
 inline f64 math::abs(f64 x)
 {

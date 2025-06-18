@@ -6,6 +6,11 @@ public:
 	stream();
 	stream(u32 stream_id);
 
+	void open_read(string filename);
+	void open_write(string filename);
+	void open_append(string filename);
+	void close();
+
 	template<typename type>
 	void write(type value);
 	void write(const c8* value);
@@ -22,6 +27,26 @@ stream::stream()
 stream::stream(u32 stream_id)
 {
 	buffer = cpp_std::__acrt_iob_func(stream_id);
+}
+
+inline void stream::open_read(string filename)
+{
+	buffer = cpp_std::fopen(filename.char_array(), "r");
+}
+
+inline void stream::open_write(string filename)
+{
+	buffer = cpp_std::fopen(filename.char_array(), "w");
+}
+
+inline void stream::open_append(string filename)
+{
+	buffer = cpp_std::fopen(filename.char_array(), "a");
+}
+
+inline void stream::close()
+{
+	cpp_std::fclose(buffer);
 }
 
 template<typename type>

@@ -6,6 +6,7 @@ namespace cpp_std
 {
 #include <math.h>
 #include <stdio.h>
+#include <io.h>
 }
 
 #include "macros/.h"

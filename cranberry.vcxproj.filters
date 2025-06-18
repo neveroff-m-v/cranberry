@@ -159,6 +159,18 @@
     <ClInclude Include="script\math\fourier.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="script\io\document\csv\.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\io\document\csv\document_csv.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\macros\nominal.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="script\math\vector.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="example\debug\main.cpp">

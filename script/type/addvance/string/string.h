@@ -12,6 +12,11 @@ public:
 
 	c8& operator[](u32 index);
 
+	string operator+(string string);
+
+	c8* char_array();
+
+	//static string add(string string_1, string string_2);
 	void add(string string);
 
 	c8* symbols;
@@ -44,6 +49,21 @@ string::string(const c8* symbols)
 inline c8& string::operator[](u32 index)
 {
 	return symbols[index];
+}
+
+inline string string::operator+(string string)
+{
+	::string result = *this;
+	result.add(string);
+	return result;
+}
+
+inline c8* string::char_array()
+{
+	c8* buffer = new c8[this->count + 1];
+	array::concat(buffer, this->symbols, this->count, new c8('\0'), 1);
+
+	return buffer;
 }
 
 inline void string::add(string string)

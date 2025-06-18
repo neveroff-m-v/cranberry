@@ -165,7 +165,10 @@
     <ClInclude Include="script\io\console\console.h" />
     <ClInclude Include="script\io\document\.h" />
     <ClInclude Include="script\io\document\document.h" />
+    <ClInclude Include="script\io\document\csv\.h" />
+    <ClInclude Include="script\io\document\csv\document_csv.h" />
     <ClInclude Include="script\io\stream.h" />
+    <ClInclude Include="script\macros\nominal.h" />
     <ClInclude Include="script\math\.h" />
     <ClInclude Include="script\math\complex.h" />
     <ClInclude Include="script\math\fourier.h" />
@@ -174,6 +177,7 @@
     <ClInclude Include="script\math\graph\polar\graph_polar.h" />
     <ClInclude Include="script\math\math.h" />
     <ClInclude Include="script\math\range.h" />
+    <ClInclude Include="script\math\vector.h" />
     <ClInclude Include="script\svg\.h" />
     <ClInclude Include="script\svg\svg_element.h" />
   </ItemGroup>
