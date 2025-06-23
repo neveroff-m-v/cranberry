@@ -13,8 +13,6 @@ public:
 
 	type& operator[](u32 index);
 
-	list<type> operator + (list<type> list);
-
 	logic is_empty();
 
 	void add(type element);
@@ -59,13 +57,6 @@ template <typename type>
 type& list<type>::operator[](u32 index)
 {
 	return elements[index];
-}
-
-template<typename type>
-inline list<type> list<type>::operator+(list<type> list)
-{
-	list<type> result
-	return list<type>();
 }
 
 template <typename type>

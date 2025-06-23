@@ -26,9 +26,11 @@ public:
 	/// </summary>
 	static f64 nan;
 
-	static list<f64> range(f64 min, f64 max, f64 delta);
+	static vector range(f64 min, f64 max, f64 delta);
 
-	static f64* range(f64 min, f64 max, u32 count);
+	static vector range(f64 min, f64 max, u32 count);
+
+	static vector range(u32 count);
 
 	/// <summary>
 	/// returns the absolute value
@@ -44,7 +46,7 @@ public:
 	/// <returns></returns>
 	static f64 sign(f64 x);
 
-	static logic inside(f64 x, range range);
+	static logic inside(f64 x, ::range range);
 
 	static logic rise(f64 a, f64 b);
 	static logic fall(f64 a, f64 b);
@@ -217,6 +219,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 cos(f64 x);
+	static vector cos(vector x);
 
 	/// <summary>
 	/// returns the arccosine value
@@ -321,10 +324,43 @@ f64 math::pi = 3.14159265358979323846;
 f64 math::nan = NAN;
 f64 math::inf = INFINITY;
 
-inline list<f64> math::range(f64 min, f64 max, f64 delta)
+inline vector math::range(f64 min, f64 max, f64 delta)
 {
-	f64* result = new f64*
-	return nullptr;
+	vector result = vector((u32)((max - min) / delta) + 1);
+
+	foreach(i, result)
+	{
+		result[i] = min;
+		min += delta;
+	}
+
+	return result;
+}
+
+inline vector math::range(f64 min, f64 max, u32 count)
+{
+	vector result = vector(count);
+	f64 delta = (max - min) / (f64) count;
+
+	foreach(i, result)
+	{
+		result[i] = min;
+		min += delta;
+	}
+
+	return result;
+}
+
+inline vector math::range(u32 count)
+{
+	vector result = vector(count);
+
+	foreach(i, result)
+	{
+		result[i] = (f64) i;
+	}
+
+	return result;
 }
 
 inline f64 math::abs(f64 x)
@@ -340,7 +376,7 @@ inline f64 math::sign(f64 x)
 				return 0.;
 }
 
-inline logic math::inside(f64 x, range range)
+inline logic math::inside(f64 x, ::range range)
 {
 	return (x >= range.min) && (x < range.max);
 }
@@ -530,6 +566,11 @@ inline f64 math::asin(f64 x)
 inline f64 math::cos(f64 x)
 {
 	return cpp_std::cos(x);
+}
+
+inline vector math::cos(vector x)
+{
+	return x.action(cos);
 }
 
 inline f64 math::acos(f64 x)

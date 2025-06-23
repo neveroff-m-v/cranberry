@@ -8,6 +8,7 @@ class string
 public:
 	string();
 	string(u32 count);
+	string(c8* symbols, u32 count);
 	string(const c8* symbols);
 
 	c8& operator[](u32 index);
@@ -32,6 +33,12 @@ string::string()
 string::string(u32 count)
 {
 	this->symbols = new c8[count]{};
+	this->count = count;
+}
+
+string::string(c8* symbols, u32 count)
+{
+	this->symbols = symbols;
 	this->count = count;
 }
 
