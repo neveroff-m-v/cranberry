@@ -45,6 +45,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 sign(f64 x);
+	static vector sign(vector x);
 
 	static logic inside(f64 x, ::range range);
 
@@ -67,6 +68,7 @@ public:
 	/// <param name="count"></param>
 	/// <returns></returns>
 	static f64 max(f64* x, u32 count);
+	static f64 max(vector x);
 
 	/// <summary>
 	/// returns minimum value
@@ -75,6 +77,7 @@ public:
 	/// <param name="count"></param>
 	/// <returns></returns>
 	static f64 min(f64* x, u32 count);
+	static f64 min(vector x);
 
 	/// <summary>
 	/// returns summ value
@@ -83,6 +86,7 @@ public:
 	/// <param name="count"></param>
 	/// <returns></returns>
 	static f64 summ(f64* x, u32 count);
+	static f64 summ(vector x);
 
 	/// <summary>
 	/// returns multiplication value
@@ -91,6 +95,7 @@ public:
 	/// <param name="count"></param>
 	/// <returns></returns>
 	static f64 mult(f64* x, u32 count);
+	static f64 mult(vector x);
 
 	/// <summary>
 	/// returns mean value
@@ -99,6 +104,7 @@ public:
 	/// <param name="count"></param>
 	/// <returns></returns>
 	static f64 mean(f64* x, u32 count);
+	static f64 mean(vector x);
 
 	/// <summary>
 	/// returns the square value
@@ -106,6 +112,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 sq(f64 x);
+	static vector sq(vector x);
 
 	/// <summary>
 	/// returns the square root value
@@ -113,6 +120,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 sqrt(f64 x);
+	static vector sqrt(vector x);
 
 	/// <summary>
 	/// returns the cube value
@@ -120,6 +128,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 cb(f64 x);
+	static vector cb(vector x);
 
 	/// <summary>
 	/// returns the cube root value
@@ -127,6 +136,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 cbrt(f64 x);
+	static vector cbrt(vector x);
 
 	/// <summary>
 	/// returns the exponent value
@@ -134,6 +144,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 exp(f64 x);
+	static vector exp(vector x);
 
 	/// <summary>
 	/// returns the natural logarithm value
@@ -141,6 +152,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 ln(f64 x);
+	static vector ln(vector x);
 
 	/// <summary>
 	/// returns the decimal logarithm value
@@ -148,6 +160,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 lg(f64 x);
+	static vector lg(vector x);
 
 	/// <summary>
 	/// returns the power value
@@ -155,6 +168,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 pw(f64 x, f64 n);
+	static vector pw(vector x, f64 n);
 
 	/// <summary>
 	/// returns the root value
@@ -162,6 +176,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 rt(f64 x, f64 n);
+	static vector rt(vector x, f64 n);
 
 	/// <summary>
 	/// returns the logarithm value
@@ -170,6 +185,7 @@ public:
 	/// <param name="n"></param>
 	/// <returns></returns>
 	static f64 log(f64 x, f64 n);
+	static vector log(vector x, f64 n);
 
 	/// <summary>
 	/// returns sigmoid value
@@ -177,6 +193,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 sigmoid(f64 x);
+	static vector sigmoid(vector x);
 
 	/// <summary>
 	/// returns the decibel value
@@ -184,6 +201,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 db(f64 x);
+	static vector db(vector x);
 
 	/// <summary>
 	/// returns the radians value
@@ -191,6 +209,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 rad(f64 x);
+	static vector rad(vector x);
 
 	/// <summary>
 	/// returns the degrees value
@@ -198,6 +217,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 deg(f64 x);
+	static vector deg(vector x);
 
 	/// <summary>
 	/// returns the sine value
@@ -205,6 +225,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 sin(f64 x);
+	static vector sin(vector x);
 
 	/// <summary>
 	/// returns the arcsine value
@@ -212,6 +233,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 asin(f64 x);
+	static vector asin(vector x);
 
 	/// <summary>
 	/// returns the cosine value
@@ -227,6 +249,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 acos(f64 x);
+	static vector acos(vector x);
 
 	/// <summary>
 	/// returns the tangent value
@@ -234,6 +257,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 tg(f64 x);
+	static vector tg(vector x);
 
 	/// <summary>
 	/// returns the arctangent value
@@ -241,6 +265,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 atg(f64 x);
+	static vector atg(vector x);
 
 	/// <summary>
 	/// returns the cotangent value
@@ -248,6 +273,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 ctg(f64 x);
+	static vector ctg(vector x);
 
 	/// <summary>
 	/// returns the arccotangent value
@@ -255,6 +281,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 actg(f64 x);
+	static vector actg(vector x);
 
 	/// <summary>
 	/// returns the hyperbolic sine value
@@ -262,6 +289,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 sh(f64 x);
+	static vector sh(vector x);
 
 	/// <summary>
 	/// returns the hyperbolic arcsine value
@@ -269,6 +297,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 ash(f64 x);
+	static vector ash(vector x);
 
 	/// <summary>
 	/// returns the hyperbolic cosine value
@@ -276,6 +305,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 ch(f64 x);
+	static vector ch(vector x);
 
 	/// <summary>
 	/// returns the hyperbolic arccosine value
@@ -283,6 +313,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 ach(f64 x);
+	static vector ach(vector x);
 
 	/// <summary>
 	/// returns the hyperbolic tangent value
@@ -290,6 +321,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 tgh(f64 x);
+	static vector tgh(vector x);
 
 	/// <summary>
 	/// returns the hyperbolic arctangent value
@@ -297,6 +329,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 atgh(f64 x);
+	static vector atgh(vector x);
 
 	/// <summary>
 	/// returns the hyperbolic cotangent value
@@ -304,6 +337,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 ctgh(f64 x);
+	static vector ctgh(vector x);
 
 	/// <summary>
 	/// returns the hyperbolic arccotangent value
@@ -311,6 +345,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 actgh(f64 x);
+	static vector actgh(vector x);
 
 	static f64 re(complex z);
 	static f64 im(complex z);
@@ -374,6 +409,11 @@ inline f64 math::sign(f64 x)
 	if (x > 0.) return 1.;
 	if (x < 0.) return -1.;
 				return 0.;
+}
+
+inline vector math::sign(vector x)
+{
+	return x.action(sign);
 }
 
 inline logic math::inside(f64 x, ::range range)
@@ -466,6 +506,11 @@ inline f64 math::summ(f64* x, u32 count)
 	return result;
 }
 
+inline f64 math::summ(vector x)
+{
+	return x.action(summ);
+}
+
 inline f64 math::mult(f64* x, u32 count)
 {
 	f64 result = 1.;
@@ -488,9 +533,19 @@ inline f64 math::sq(f64 x)
 	return x * x;
 }
 
+inline vector math::sq(vector x)
+{
+	return x.action(sq);
+}
+
 inline f64 math::sqrt(f64 x)
 {
 	return cpp_std::sqrt(x);
+}
+
+inline vector math::sqrt(vector x)
+{
+	return x.action(sqrt);
 }
 
 inline f64 math::cb(f64 x)
@@ -498,14 +553,29 @@ inline f64 math::cb(f64 x)
 	return x * x * x;
 }
 
+inline vector math::cb(vector x)
+{
+	return x.action(cb);
+}
+
 inline f64 math::cbrt(f64 x)
 {
 	return cpp_std::cbrt(x);
 }
 
+inline vector math::cbrt(vector x)
+{
+	return x.action(cbrt);
+}
+
 inline f64 math::exp(f64 x)
 {
 	return cpp_std::exp(x);
+}
+
+inline vector math::exp(vector x)
+{
+	return x.action(exp);
 }
 
 inline f64 math::ln(f64 x)

@@ -10,6 +10,12 @@ public:
 
 	f64& operator[](u32 index);
 
+	vector operator+(f64 value);
+	vector operator+(vector vector);
+
+	vector operator-(f64 value);
+	vector operator-(vector vector);
+
 	vector operator*(f64 value);
 	vector operator*(vector vector);
 
@@ -17,6 +23,7 @@ public:
 	vector operator/(vector vector);
 
 	vector action(f64(*function)(f64));
+	f64 action(f64(*function)(f64*, u32));
 
 	f64* values;
 	u32 count;
@@ -52,6 +59,54 @@ inline string vector::to_string()
 inline f64& vector::operator[](u32 index)
 {
 	return values[index];
+}
+
+inline vector vector::operator+(f64 value)
+{
+	::vector result = ::vector(count);
+
+	foreach(i, result)
+	{
+		result[i] = values[i] + value;
+	}
+
+	return result;
+}
+
+inline vector vector::operator+(vector vector)
+{
+	::vector result = ::vector(count);
+
+	foreach(i, result)
+	{
+		result[i] = values[i] + vector.values[i];
+	}
+
+	return result;
+}
+
+inline vector vector::operator-(f64 value)
+{
+	::vector result = ::vector(count);
+
+	foreach(i, result)
+	{
+		result[i] = values[i] - value;
+	}
+
+	return result;
+}
+
+inline vector vector::operator-(vector vector)
+{
+	::vector result = ::vector(count);
+
+	foreach(i, result)
+	{
+		result[i] = values[i] - vector.values[i];
+	}
+
+	return result;
 }
 
 inline vector vector::operator*(f64 value)
@@ -112,4 +167,9 @@ inline vector vector::action(f64(*function)(f64))
 	}
 
 	return result;
+}
+
+inline f64 vector::action(f64(*function)(f64*, u32))
+{
+	return function(values, count);
 }

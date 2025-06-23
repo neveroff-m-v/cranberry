@@ -44,7 +44,7 @@ inline string convert::to_string(u32 value)
 inline string convert::to_string(u64 value)
 {
     c8* buffer = new c8[21];
-    cpp_std::sprintf(buffer, "%i", value);
+    cpp_std::sprintf(buffer, "%li", value);
     return string(buffer);
 }
 
@@ -57,7 +57,7 @@ inline string convert::to_string(f32 value)
 
 inline string convert::to_string(f64 value)
 {
-    c8* buffer = new c8[20];
+    c8* buffer = new c8[200];
     cpp_std::sprintf(buffer, "%lf", value);
     return string(buffer);
 }

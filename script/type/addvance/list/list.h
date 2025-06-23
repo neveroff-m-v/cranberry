@@ -158,7 +158,7 @@ inline list<type> list<type>::action(type(*function)(type*, u32), u32 width)
 }
 
 template<typename type>
-type list<type>::action(type(*function)(type*, u32))
+inline type list<type>::action(type(*function)(type*, u32))
 {
 	return function(elements, count);
 }
