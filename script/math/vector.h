@@ -23,6 +23,7 @@ public:
 	vector operator/(vector vector);
 
 	vector action(f64(*function)(f64));
+	vector action(f64(*function)(f64, f64), f64 arg);
 	f64 action(f64(*function)(f64*, u32));
 
 	f64* values;
@@ -164,6 +165,18 @@ inline vector vector::action(f64(*function)(f64))
 	foreach(i, result)
 	{
 		result.values[i] = function(values[i]);
+	}
+
+	return result;
+}
+
+inline vector vector::action(f64(*function)(f64, f64), f64 arg)
+{
+	vector result = vector(count);
+
+	foreach(i, result)
+	{
+		result.values[i] = function(values[i], arg);
 	}
 
 	return result;

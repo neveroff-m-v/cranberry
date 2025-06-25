@@ -38,6 +38,7 @@ public:
 	/// <param name="x"></param>
 	/// <returns></returns>
 	static f64 abs(f64 x);
+	static vector abs(vector x);
 
 	/// <summary>
 	/// returns the sign value
@@ -404,6 +405,11 @@ inline f64 math::abs(f64 x)
 				return -x;
 }
 
+inline vector math::abs(vector x)
+{
+	return x.action(abs);
+}
+
 inline f64 math::sign(f64 x)
 {
 	if (x > 0.) return 1.;
@@ -479,6 +485,11 @@ inline f64 math::max(f64* x, u32 count)
 	return result;
 }
 
+inline f64 math::max(vector x)
+{
+	return x.action(max);
+}
+
 inline f64 math::min(f64* x, u32 count)
 {
 	f64 result = x[0];
@@ -492,6 +503,11 @@ inline f64 math::min(f64* x, u32 count)
 	}
 
 	return result;
+}
+
+inline f64 math::min(vector x)
+{
+	return x.action(min);
 }
 
 inline f64 math::summ(f64* x, u32 count)
@@ -523,9 +539,19 @@ inline f64 math::mult(f64* x, u32 count)
 	return result;
 }
 
+inline f64 math::mult(vector x)
+{
+	return x.action(mult);
+}
+
 inline f64 math::mean(f64* x, u32 count)
 {
 	return summ(x, count) / (f64) count;
+}
+
+inline f64 math::mean(vector x)
+{
+	return x.action(mean);
 }
 
 inline f64 math::sq(f64 x)
@@ -583,9 +609,19 @@ inline f64 math::ln(f64 x)
 	return cpp_std::log(x);
 }
 
+inline vector math::ln(vector x)
+{
+	return x.action(ln);
+}
+
 inline f64 math::lg(f64 x)
 {
 	return cpp_std::log10(x);
+}
+
+inline vector math::lg(vector x)
+{
+	return x.action(lg);
 }
 
 inline f64 math::pw(f64 x, f64 n)
@@ -593,9 +629,19 @@ inline f64 math::pw(f64 x, f64 n)
 	return cpp_std::pow(x, n);
 }
 
+inline vector math::pw(vector x, f64 n)
+{
+	return x.action(pw, n);
+}
+
 inline f64 math::rt(f64 x, f64 n)
 {
 	return cpp_std::pow(x, 1. / n);
+}
+
+inline vector math::rt(vector x, f64 n)
+{
+	return x.action(rt, n);
 }
 
 inline f64 math::log(f64 x, f64 n)
@@ -603,9 +649,19 @@ inline f64 math::log(f64 x, f64 n)
 	return ln(x) / ln(n);
 }
 
+inline vector math::log(vector x, f64 n)
+{
+	return x.action(log, n);
+}
+
 inline f64 math::sigmoid(f64 x)
 {
 	return 1. / (1 + exp(-x));
+}
+
+inline vector math::sigmoid(vector x)
+{
+	return x.action(sigmoid);
 }
 
 inline f64 math::db(f64 x)
@@ -613,9 +669,19 @@ inline f64 math::db(f64 x)
 	return 20. * cpp_std::log10(x);
 }
 
+inline vector math::db(vector x)
+{
+	return x.action(db);
+}
+
 inline f64 math::rad(f64 x)
 {
 	return x * math::pi / 180.;
+}
+
+inline vector math::rad(vector x)
+{
+	return x.action(rad);
 }
 
 inline f64 math::deg(f64 x)
@@ -623,14 +689,29 @@ inline f64 math::deg(f64 x)
 	return x / math::pi * 180.;
 }
 
+inline vector math::deg(vector x)
+{
+	return x.action(deg);
+}
+
 inline f64 math::sin(f64 x)
 {
 	return cpp_std::sin(x);
 }
 
+inline vector math::sin(vector x)
+{
+	return x.action(sin);
+}
+
 inline f64 math::asin(f64 x)
 {
 	return cpp_std::asin(x);
+}
+
+inline vector math::asin(vector x)
+{
+	return x.action(asin);
 }
 
 inline f64 math::cos(f64 x)
@@ -648,9 +729,19 @@ inline f64 math::acos(f64 x)
 	return cpp_std::acos(x);
 }
 
+inline vector math::acos(vector x)
+{
+	return x.action(acos);
+}
+
 inline f64 math::tg(f64 x)
 {
 	return cpp_std::tan(x);
+}
+
+inline vector math::tg(vector x)
+{
+	return x.action(tg);
 }
 
 inline f64 math::atg(f64 x)
@@ -658,9 +749,19 @@ inline f64 math::atg(f64 x)
 	return cpp_std::atan(x);
 }
 
+inline vector math::atg(vector x)
+{
+	return x.action(atg);
+}
+
 inline f64 math::ctg(f64 x)
 {
 	return 1 / tg(x);
+}
+
+inline vector math::ctg(vector x)
+{
+	return x.action(ctg);
 }
 
 inline f64 math::actg(f64 x)
@@ -668,9 +769,19 @@ inline f64 math::actg(f64 x)
 	return 0.;
 }
 
+inline vector math::actg(vector x)
+{
+	return x.action(actg);
+}
+
 inline f64 math::sh(f64 x)
 {
 	return cpp_std::sinh(x);
+}
+
+inline vector math::sh(vector x)
+{
+	return x.action(sh);
 }
 
 inline f64 math::ash(f64 x)
@@ -678,9 +789,19 @@ inline f64 math::ash(f64 x)
 	return cpp_std::asinh(x);
 }
 
+inline vector math::ash(vector x)
+{
+	return x.action(ash);
+}
+
 inline f64 math::ch(f64 x)
 {
 	return cpp_std::cosh(x);
+}
+
+inline vector math::ch(vector x)
+{
+	return x.action(ch);
 }
 
 inline f64 math::ach(f64 x)
@@ -688,9 +809,19 @@ inline f64 math::ach(f64 x)
 	return cpp_std::acosh(x);
 }
 
+inline vector math::ach(vector x)
+{
+	return x.action(ach);
+}
+
 inline f64 math::tgh(f64 x)
 {
 	return cpp_std::tanh(x);
+}
+
+inline vector math::tgh(vector x)
+{
+	return x.action(tgh);
 }
 
 inline f64 math::atgh(f64 x)
@@ -698,14 +829,29 @@ inline f64 math::atgh(f64 x)
 	return cpp_std::atanh(x);
 }
 
+inline vector math::atgh(vector x)
+{
+	return x.action(atgh);
+}
+
 inline f64 math::ctgh(f64 x)
 {
 	return 0.;
 }
 
+inline vector math::ctgh(vector x)
+{
+	return x.action(ctgh);
+}
+
 inline f64 math::actgh(f64 x)
 {
 	return 0.;
+}
+
+inline vector math::actgh(vector x)
+{
+	return x.action(actgh);
 }
 
 inline f64 math::re(complex z)
