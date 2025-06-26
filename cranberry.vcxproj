@@ -176,13 +176,14 @@
     <ClInclude Include="script\math\graph\polar\.h" />
     <ClInclude Include="script\math\graph\polar\graph_polar.h" />
     <ClInclude Include="script\math\math.h" />
-    <ClInclude Include="script\math\range.h" />
     <ClInclude Include="script\math\vector.h" />
     <ClInclude Include="script\svg\.h" />
+    <ClInclude Include="script\svg\shape\.h" />
     <ClInclude Include="script\svg\svg_element.h" />
+    <ClInclude Include="script\type\addvance\media\.h" />
+    <ClInclude Include="script\type\addvance\media\color.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="example\debug\main.cpp" />
     <ClCompile Include="example\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

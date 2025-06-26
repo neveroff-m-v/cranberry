@@ -38,3 +38,10 @@
 #define _uF		1.000e-06
 #define _nF		1.000e-09
 #define _pF		1.000e-12
+
+// Induction
+#define _H		1.000e+00
+#define _mH		1.000e-03
+#define _uH		1.000e-06
+#define _nH		1.000e-09
+#define _pH		1.000e-12

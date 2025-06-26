@@ -9,22 +9,22 @@ public:
 	/// <summary>
 	/// constant e
 	/// </summary>
-	static f64 e;
+	static const f64 e;
 
 	/// <summary>
 	/// constant π
 	/// </summary>
-	static f64 pi;
+	static const f64 pi;
 
 	/// <summary>
 	/// infinity ∞
 	/// </summary>
-	static f64 inf;
+	static const f64 inf;
 
 	/// <summary>
 	/// not a number
 	/// </summary>
-	static f64 nan;
+	static const f64 nan;
 
 	static vector range(f64 min, f64 max, f64 delta);
 
@@ -47,8 +47,6 @@ public:
 	/// <returns></returns>
 	static f64 sign(f64 x);
 	static vector sign(vector x);
-
-	static logic inside(f64 x, ::range range);
 
 	static logic rise(f64 a, f64 b);
 	static logic fall(f64 a, f64 b);
@@ -348,6 +346,9 @@ public:
 	static f64 actgh(f64 x);
 	static vector actgh(vector x);
 
+	static f64 sinc(f64 x);
+	static vector sinc(vector x);
+
 	static f64 re(complex z);
 	static f64 im(complex z);
 	static f64 abs(complex z);
@@ -355,10 +356,10 @@ public:
 	static complex exp(complex z);
 };
 
-f64 math::e = 2.7182818284590452354;
-f64 math::pi = 3.14159265358979323846;
-f64 math::nan = NAN;
-f64 math::inf = INFINITY;
+const f64 math::e = 2.7182818284590452354;
+const f64 math::pi = 3.14159265358979323846;
+const f64 math::nan = NAN;
+const f64 math::inf = INFINITY;
 
 inline vector math::range(f64 min, f64 max, f64 delta)
 {
@@ -420,11 +421,6 @@ inline f64 math::sign(f64 x)
 inline vector math::sign(vector x)
 {
 	return x.action(sign);
-}
-
-inline logic math::inside(f64 x, ::range range)
-{
-	return (x >= range.min) && (x < range.max);
 }
 
 inline logic math::rise(f64 a, f64 b)
@@ -852,6 +848,23 @@ inline f64 math::actgh(f64 x)
 inline vector math::actgh(vector x)
 {
 	return x.action(actgh);
+}
+
+inline f64 math::sinc(f64 x)
+{
+	if (x != 0.0)
+	{
+		return sin(x) / x;
+	}
+	else
+	{
+		return 1.0;
+	}
+}
+
+inline vector math::sinc(vector x)
+{
+	return x.action(sinc);
 }
 
 inline f64 math::re(complex z)

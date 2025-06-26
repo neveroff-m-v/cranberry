@@ -3,9 +3,9 @@
 class fourier
 {
 public:
-	static list<complex> fft(list<complex> s);
+	static list<complex> dft(list<complex> s);
 };
 
-inline list<complex> fourier::fft(list<complex> s)
+inline list<complex> fourier::dft(list<complex> s)
 {
 }
